@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garki Transit — Abuja Corridor & Commuter Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">GARKI <span>TRANSIT</span></a>
+      <nav class="nav-links">
+        <a href="#routes">Corridors</a>
+        <a href="#tips">Commuter Tips</a>
+      </nav>
+      <a href="#routes" class="btn btn-primary">Find a Route</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">ABUJA URBAN COMMUTER DIRECTORY</p>
+          <h1>Navigate Abuja corridors with clarity.</h1>
+          <p class="hero-copy">
+            A structured commuter reference covering key pickup zones, typical travel windows, and corridor links across Garki, Wuse, Asokoro, and the Airport road axis.
+          </p>
+          <div class="search-wrap">
+            <label for="routeSearch" class="sr-only">Search by district, stop, or corridor</label>
+            <input
+              type="search"
+              id="routeSearch"
+              placeholder="Search stop or district (e.g. Garki II, Wuse Zone 4, Lugbe)..."
+            />
+          </div>
+        </div>
+
+        <aside class="status-panel">
+          <span class="pill">Commuter Snapshot</span>
+          <h2>4 Major Axes</h2>
+          <p>Filter corridors by district or type a landmark in the search box to narrow down matching routes immediately.</p>
+          <ul class="snapshot-list">
+            <li><strong>Peak Morning:</strong> 07:00 – 09:30 WAT</li>
+            <li><strong>Peak Evening:</strong> 16:30 – 19:30 WAT</li>
+            <li><strong>Coverage:</strong> Central, Garki, Wuse, Asokoro & Lugbe</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="routes" class="section">
+      <div class="container">
+        <div class="routes-header">
+          <div>
+            <p class="eyebrow">CORRIDOR DIRECTORY</p>
+            <h2>Active Abuja Routes</h2>
+          </div>
+          <div class="filter-group" role="group" aria-label="Filter corridors">
+            <button class="filter-chip active" data-corridor="all">All</button>
+            <button class="filter-chip" data-corridor="central-wuse">Central & Wuse</button>
+            <button class="filter-chip" data-corridor="garki-asokoro">Garki & Asokoro</button>
+            <button class="filter-chip" data-corridor="airport-lugbe">Airport & Lugbe</button>
+          </div>
+        </div>
+
+        <div class="routes-grid" id="routesGrid">
+          <article class="route-card" data-corridor="garki-asokoro" data-search="garki area 3 area 11 wuse zone 5 central">
+            <div class="route-top">
+              <span class="corridor-tag">Garki & Asokoro</span>
+              <span class="est-time">~20–35 mins</span>
+            </div>
+            <h3>Garki Area 3 ↔ Wuse Zone 5</h3>
+            <p>Connects residential Garki blocks through Ahmadu Bello Way toward central Wuse commercial stops.</p>
+            <div class="route-meta">
+              <span><strong>Key Stops:</strong> Area 3, Area 11, Wuse Zone 5</span>
+              <button class="details-btn" type="button">Mark Preferred</button>
+            </div>
+          </article>
+
+          <article class="route-card" data-corridor="airport-lugbe" data-search="garki airport road lugbe traders link">
+            <div class="route-top">
+              <span class="corridor-tag">Airport & Lugbe</span>
+              <span class="est-time">~35–55 mins</span>
+            </div>
+            <h3>Garki ↔ Lugbe (Airport Road)</h3>
+            <p>Follows the Umaru Musa Yar'Adua Expressway corridor serving Lugbe estates and outer southern stops.</p>
+            <div class="route-meta">
+              <span><strong>Key Stops:</strong> Area 1 Junction, ACO/Pyakasa, Lugbe</span>
+              <button class="details-btn" type="button">Mark Preferred</button>
+            </div>
+          </article>
+
+          <article class="route-card" data-corridor="central-wuse" data-search="wuse market wuse zone 4 central area secretariat">
+            <div class="route-top">
+              <span class="corridor-tag">Central & Wuse</span>
+              <span class="est-time">~15–25 mins</span>
+            </div>
+            <h3>Wuse Market ↔ Central Area</h3>
+            <p>High-frequency inner-city link moving between commercial Wuse streets and federal/civic blocks.</p>
+            <div class="route-meta">
+              <span><strong>Key Stops:</strong> Wuse Zone 4, Berger/Zone 3 link, Central</span>
+              <button class="details-btn" type="button">Mark Preferred</button>
+            </div>
+          </article>
+
+          <article class="route-card" data-corridor="garki-asokoro" data-search="asokoro garki area 10 secretariat">
+            <div class="route-top">
+              <span class="corridor-tag">Garki & Asokoro</span>
+              <span class="est-time">~15–30 mins</span>
+            </div>
+            <h3>Garki Area 10 ↔ Asokoro</h3>
+            <p>Short cross-district connection linking Garki's eastern avenues with Asokoro residential and office zones.</p>
+            <div class="route-meta">
+              <span><strong>Key Stops:</strong> Area 10, Garki II, Asokoro</span>
+              <button class="details-btn" type="button">Mark Preferred</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty-state" id="emptyState" hidden>
+          No matching Abuja routes found. Try searching for <strong>Garki</strong>, <strong>Wuse</strong>, <strong>Asokoro</strong>, or <strong>Lugbe</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="tips" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">PRACTICAL MOVEMENT</p>
+        <h2>Commuter Tips for Abuja</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h3>Confirm Exact Boarding Points</h3>
+            <p>Major junctions can have separate lanes for short-hop drops and longer express stretches—always confirm the final stop before boarding.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Add Buffer During Rush Hours</h3>
+            <p>School runs, market days, and rainy mornings can double transit times along expressways and main arterial junctions.</p>
+          </div>
+          <div class="tip-card">
+            <h3>Keep Small Denominations Ready</h3>
+            <p>Having smaller naira notes on hand speeds up fare settlement at busy bus stops and avoids delays.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p><strong>GARKI TRANSIT</strong> — Abuja Commuter Reference Demo</p>
+      <p>Built by Abdullah Mubarak • HTML, CSS &amp; JavaScript</p>
+    </div>
+  </footer>
+</body>
+</html>
